@@ -23,6 +23,7 @@ class User {
 var userOne = new User('ryu@ninjas.com', 'Ryu')
 var userTwo = new User('ken@ninjas.com', 'Ken')
 
+// This is method chaining
 userOne.login().updateScore().updateScore().logout()
 
 // the 'new' keyword
