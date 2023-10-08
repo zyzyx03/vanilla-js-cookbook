@@ -19,12 +19,40 @@ class User {
     }
 }
 
+class Admin extends User{
+    sudo(){
+        console.log("I'am Super Power")
+        return this
+    }
+    deleteUser(user){
+        users = users.filter(u => {
+            return u.email != user.email
+        })
+    }
+}
+
+
 
 var userOne = new User('ryu@ninjas.com', 'Ryu')
 var userTwo = new User('ken@ninjas.com', 'Ken')
 
 // This is method chaining
 userOne.login().updateScore().updateScore().logout()
+
+// Testing out class inheritence
+var superUper = new Admin('super@ninjas.com', 'Super')
+
+// Array of Users
+let users = [userOne, userTwo, superUper]
+
+// Testing out new extended method
+superUper.login().sudo().deleteUser(userOne)
+
+console.log(users)
+
+
+
+
 
 // the 'new' keyword
 // - creates a new empty object {}
